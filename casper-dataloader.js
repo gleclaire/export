@@ -5,8 +5,7 @@ var casper = require("casper").create();
 casper.options.waitTimeout = 20000;
 
 var url = 'http://localhost:8000/examples/export-dataloader.html'
-var graphFile =  'screenshots/dataloader.jpg'
-var x = require('casper').selectXPath;
+var graphFile =  'screenshots/dataloader.jpg'http
 
 casper.on('remote.message', function(message) {
     this.echo('remote message caught: ' + message);

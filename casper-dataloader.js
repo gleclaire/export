@@ -1,10 +1,11 @@
+var fs = require('fs');
 
 var casper = require("casper").create();
 
 casper.options.waitTimeout = 20000;
 
-var url = 'http://localhost:8000/examples/export-test.html'
-var graphFile =  'screenshots/export.jpg'
+var url = 'http://localhost:8000/examples/export-dataloader.html'
+var graphFile =  'screenshots/dataloader.jpg'
 var x = require('casper').selectXPath;
 
 casper.on('remote.message', function(message) {
@@ -44,7 +45,6 @@ casper.start(url, function() {
             casper.capture('screenshots/error.png');
         });
 
-
     }, function() {
         this.log('No chart element ever appeared');
         this.click('a#DownloadChart', 'a');
@@ -55,5 +55,6 @@ casper.start(url, function() {
 
 
 casper.run(function() {
+
     this.echo("All Done").exit();
 });

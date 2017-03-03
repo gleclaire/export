@@ -52,7 +52,6 @@ casper.start(url, function() {
 
 });
 
-
 casper.run(function() {
 
     this.echo("All Done").exit();
